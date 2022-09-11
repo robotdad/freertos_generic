@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "program": "${workspaceFolder}/build/m33-debug/LPC55S69_cmake_template.elf",
+            "program": "${workspaceFolder}/build/m33-debug/freertos_generic.elf",
             "MIMode": "gdb",
             "miDebuggerPath": "arm-none-eabi-gdb",
             "miDebuggerServerAddress": "localhost:3333",
