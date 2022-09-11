@@ -89,7 +89,7 @@ add_custom_command(TARGET ${EXECUTABLE}
 # Optional: Create hex, bin and S-Record files after the build
 add_custom_command(TARGET ${EXECUTABLE}
         POST_BUILD
-        COMMAND ${CMAKE_OBJCOPY} -O srec --srec-len=64 "${EXECUTABLE}" "$${PROJECT_NAME}.s19"
-        COMMAND ${CMAKE_OBJCOPY} -O ihex "${EXECUTABLE}" "$${PROJECT_NAME}.hex"
+        COMMAND ${CMAKE_OBJCOPY} -O srec --srec-len=64 "${EXECUTABLE}" "${PROJECT_NAME}.s19"
+        COMMAND ${CMAKE_OBJCOPY} -O ihex "${EXECUTABLE}" "${PROJECT_NAME}.hex"
         COMMAND ${CMAKE_OBJCOPY} -O binary "${EXECUTABLE}" "${PROJECT_NAME}.bin" 
         )
