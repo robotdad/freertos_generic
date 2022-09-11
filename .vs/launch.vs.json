@@ -3,8 +3,8 @@
   "configurations": [
     {
       "project": "CMakeLists.txt",
-      "projectTarget": "LPC55S69_cmake_template.elf",
-      "name": "LPC55S69_cmake_template.elf",
+      "projectTarget": "freertos_generic.elf",
+      "name": "freertos_generic.elf",
       "type": "cppdbg",
       "request": "launch",
       "cwd": "${workspaceRoot}",
