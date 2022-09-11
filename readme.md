@@ -1,10 +1,10 @@
-# CMake project for the NXP LPC55S69
+# freertos_generic NXP LPC55S69 sample 
 
-This project is based on the [MCU on Eclipse](https://mcuoneclipse.com/) tutorial for [creating CMake projects for use with Eclipse](https://mcuoneclipse.com/2022/09/04/tutorial-creating-bare-bare-embedded-projects-with-cmake-with-eclipse-included/).
+This project was started from the [LPC55S69_CMake_Template](https://github.com/robotdad/LPC55S69_CMake_Template). The sources from the NXP sample for freertos_generic were then adapted to this format. Minimal dependencies from the SDK are included.
 
-The primary chages made were to support CMakePresets, use vcpkg for toolchain acquisition, and enable VS and VS Code usage. The tutorial for using this with MCUXpresso IDE should still work (not validated yet).
+By using the CMakeTemplate the project has a base for working with CMakePresets, vcpkg for toolchain acquisition, and enables VS and VS Code usage. Changes from the template were to remove the unused example source, then update launch and ci files that use the output name. The CMakeLists.txt is adapted from the template and sample starting points. The Arm gcc toolchain from the template is used rather than from the SDK, they do not appear functionally different.
 
-A devcontainer has also been configured, but it has only been validated to run builds so far/
+A devcontainer has also been configured, but it has only been validated to run builds so far.
 
 
 ## vcpkg
@@ -59,7 +59,7 @@ docker run --name app-build-container app-build-image
 ```
 Get you binary out of your build container
 ```
-docker cp app-build-container:/src/build/m33-debug/LPC55S69_cmake_template.elf .
+docker cp app-build-container:/src/build/m33-debug/freertos_generic.elf .
 ```
 Don't name the container to easily spin it up multiple times, easily discard them all later with ```docker container prune``` (deletes all containers not running).
 ```
