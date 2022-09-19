@@ -43,10 +43,8 @@ jobs:
       
     - name: Download Bundle
       run: |
-         gh release download -R github/codeql-coding-standards -p code-scanning-cpp-query-pack-v1.1.0.zip v1.1.0
-         unzip code-scanning-cpp-query-pack-v1.1.0.zip
-      env: 
-         GH_TOKEN: ${{ secrets.CODING_STANDARDS_PAT }}
+         wget https://github.com/github/codeql-coding-standards/releases/download/v2.8.0/code-scanning-cpp-query-pack-2.8.0.zip
+         unzip code-scanning-cpp-query-pack-2.8.0.zip
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
