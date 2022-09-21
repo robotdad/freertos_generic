@@ -39,6 +39,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      
+      
+    - name: Download Bundle
+      run: |
+         wget https://github.com/github/codeql-coding-standards/releases/download/v2.8.0/code-scanning-cpp-query-pack-2.8.0.zip
+         unzip code-scanning-cpp-query-pack-2.8.0.zip
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -51,7 +57,11 @@ jobs:
         
         # Details on CodeQL's query packs refer to : https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
         # queries: security-extended,security-and-quality
-        queries: security-and-quality
+        # queries: security-and-quality
+        tools: https://github.com/github/codeql-action/releases/download/codeql-bundle-20220120/codeql-bundle-linux64.tar.gz
+        queries: + security-and-quality, ./codeql-coding-standards/c/cert/src/codeql-suites/cert-default.qls, ./codeql-coding-standards/c/misra/src/codeql-suites/misra-default.qls 
+        # queries: + ./codeql-coding-standards/cpp/autosar/src/codeql-suites/autosar-default.qls, ./codeql-coding-standards/cpp/cert/src/codeql-suites/cert-default.qls, security-and-quality7
+        
 
         
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
